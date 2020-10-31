@@ -13,6 +13,7 @@ const Form = () => {
           <label htmlFor="concept">Concepto</label>
           <input type="text" id="concept" className="u-full-width" />
         </div>
+        <input type="submit" value="Definir Gasto" className="button-primary u-full-width" />
       </form>
     </>
   );
