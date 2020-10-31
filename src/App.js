@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Question from './components/Question';
 import Form from './components/Form';
 import Listing from './components/Listing';
@@ -11,13 +11,17 @@ function App() {
   const [expenses, setExpenses] = useState([]);
 
   const addExpenseObject = expenseObject => {
-    setRemaining(remaining - expenseObject.expense);
-
     setExpenses([
       ...expenses,
       expenseObject
     ]);
   }
+
+  useEffect(() => {
+    if (expenses.length > 0) {
+      setRemaining(r => (r - expenses[expenses.length - 1].expense));
+    }
+  }, [expenses, setRemaining])
 
   return (
     <div className="container">
