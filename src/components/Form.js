@@ -1,16 +1,28 @@
 import React, { useState } from 'react';
+import Error from './Error';
 
 const Form = () => {
   const [expense, setExpense] = useState(0);
   const [concept, setConcept] = useState('');
+  const [error, setError] = useState(false);
 
   const addExpense = e => {
     e.preventDefault();
+
+    if (quantity <= 0 || isNaN(quantity) || concept.trim() === '') {
+      setError(true);
+
+      return;
+    }
+
+
+    setError(false);
   }
 
   return (
     <>
       <h2>Agrega tus gastos</h2>
+      {error ? <Error message="Todos los campos son obligatorios o el gasto se pasa del presupuesto" /> : null}
       <form onSubmit={addExpense}>
         <div className="campo">
           <label htmlFor="expense">Cantidad</label>
