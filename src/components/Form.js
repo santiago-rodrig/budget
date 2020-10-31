@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import shortid from 'shortid';
 import Error from './Error';
 
@@ -45,5 +46,9 @@ const Form = ({ addExpenseObject }) => {
     </>
   );
 }
+
+Form.propTypes = {
+  addExpenseObject: PropTypes.func.isRequired
+};
 
 export default Form;

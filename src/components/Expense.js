@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Expense = ({ expenseObject }) => (
   <li className="gastos">
@@ -8,5 +9,9 @@ const Expense = ({ expenseObject }) => (
     </p>
   </li>
 );
+
+Expense.propTypes = {
+  expenseObject: PropTypes.object.isRequired
+};
 
 export default Expense;
