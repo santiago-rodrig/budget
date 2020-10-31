@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Question from './components/Question';
 import Form from './components/Form';
+import Listing from './components/Listing';
 
 function App() {
   const [budget, setBudget] = useState(0);
@@ -32,6 +33,7 @@ function App() {
               <Form addExpenseObject={addExpenseObject} />
             </div>
             <div className="one-half column">
+              <Listing expenses={expenses} />
             </div>
           </div>
         }
