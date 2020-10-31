@@ -1,11 +1,30 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
 
 const Question = () => {
+  const [quantity, setQuantity] = useState(0);
+  const [error, setError] = useState(false);
+
+  const defineBudget = e => {
+    setQuantity(parseInt(e.target.value));
+  }
+
+  const submitBudget = e => {
+    e.preventDefault();
+
+    if (quantity <= 0 || isNaN(quantity)) {
+      setError(true);
+
+      return;
+    }
+
+    setError(false);
+  }
+
   return (
     <>
       <h2>Coloca tu presupuesto</h2>
-      <form>
-        <input type="number" className="u-full-width" />
+      <form onSubmit={submitBudget}>
+        <input type="number" className="u-full-width" onChange={defineBudget} />
         <input type="submit" className="button-primary u-full-width" value="Definir Presupuesto" />
       </form>
     </>
