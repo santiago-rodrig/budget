@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from 'react'
+import Error from './Error';
 
 const Question = () => {
   const [quantity, setQuantity] = useState(0);
@@ -23,6 +24,7 @@ const Question = () => {
   return (
     <>
       <h2>Coloca tu presupuesto</h2>
+      {error ? <Error message="El presupuesto es incorrecto" /> : null}
       <form onSubmit={submitBudget}>
         <input type="number" className="u-full-width" onChange={defineBudget} />
         <input type="submit" className="button-primary u-full-width" value="Definir Presupuesto" />
