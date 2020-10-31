@@ -27,13 +27,3 @@ yarn start
 ```
 
 See the application at [localhost 3000](http://localhost:3000/).
-
-You'll need NodeJS and Yarn installed on your system.
-
-Clone the repository.
-
-Install the dependencies.
-
-Start the local server.
-
-See the application running at [localhost 3000](http://localhost:3000/).
